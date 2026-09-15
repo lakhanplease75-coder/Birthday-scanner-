@@ -1,0 +1,121 @@
+HTML<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Scanner 🎂</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      width: 100%;
+      max-width: 400px;
+      padding: 30px 22px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      color: #ff4f81;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 12px;
+      background: #ff4f81;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e83e70;
+    }
+
+    #result {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      background: #fff0f5;
+      border-radius: 15px;
+    }
+
+    .emoji {
+      font-size: 45px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>🎂 Birthday Scanner</h1>
+    <p>Enter your name and birthday PIN</p>
+
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <input type="password" id="pin" placeholder="Enter birthday PIN">
+
+    <button onclick="scanBirthday()">✨ Scan Birthday</button>
+
+    <div id="result">
+      <div class="emoji">🎉🎂🎁</div>
+      <h2 id="wishTitle"></h2>
+      <p>Wishing you lots of happiness, love and success! 💖</p>
+      <p>May your special day be full of beautiful memories. ✨</p>
+    </div>
+  </div>
+
+  <script>
+    function scanBirthday() {
+      const name = document.getElementById("name").value;
+      const pin = document.getElementById("pin").value;
+      const result = document.getElementById("result");
+      const wishTitle = document.getElementById("wishTitle");
+
+      if (name === "" || pin === "") {
+        alert("Please enter your name and PIN 😊");
+        return;
+      }
+
+      wishTitle.innerText = "Happy Birthday, " + name + "! 🎂";
+
+      result.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
